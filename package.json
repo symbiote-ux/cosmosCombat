@@ -1,0 +1,11 @@
+{
+  "name": "cosmoscombat",
+  "version": "1.0.0",
+  "description": "save your planet against alien attack by destroying incoming ships",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "saurabh, rahit",
+  "license": "ISC"
+}
