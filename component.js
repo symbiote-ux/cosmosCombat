@@ -16,13 +16,13 @@ class Component {
     };
   }
   moveRight() {
-    this.x += 6;
+    this.x += 30;
   }
   moveLeft() {
-    this.x -= 6;
+    this.x -= 30;
   }
   moveUp() {
-    this.y -= 2;
+    this.y -= 25;
   }
   moveDown() {
     this.y += 1;

@@ -12,13 +12,15 @@ const clearScreen = () => {
 
 const drawGame = (status, ctx) => {
   const ids = ['#missile', '#ship', '#alien'];
-  const {player, alienShip, weapons} = status;
+  const {player, alienShips, weapons} = status;
   clearScreen();
   weapons.forEach(weapon => {
     draw(weapon, ctx, ids[0]);
   });
   draw(player, ctx, ids[1]);
-  draw(alienShip, ctx, ids[2]);
+  alienShips.forEach(alien => {
+    draw(alien, ctx, ids[2]);
+  });
 };
 
 const handleKeyDown = game => {
@@ -50,9 +52,15 @@ const main = () => {
   const game = new Game(player, alien, weapon);
   attachEventListeners(game);
 
-  const gameInterval = setInterval(() => {
+  setInterval(() => {
+    // if (game.isOver()) {
+    //   alert('Game over');
+    // }
     drawGame(game.status(), ctx);
   }, 50);
+  setInterval(() => {
+    game.insertAlienShip();
+  }, 3000);
 };
 
 window.onload = main;
