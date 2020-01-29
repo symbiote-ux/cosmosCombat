@@ -1,16 +1,38 @@
 'use strict';
 
 class Game {
-  constructor(player1, alienShip, weapon) {
-    this.player1 = player1;
+  constructor(player, alienShip, weapon) {
+    this.player = player;
     this.alienShip = alienShip;
-    this.weapon = weapon;
+    this.weapons = [weapon];
   }
   status() {
+    this.update();
     return {
-      player1: this.player1.details(),
+      player: this.player.details(),
       alienShip: this.alienShip.details(),
-      weapon: this.weapon.details()
+      weapons: this.weapons.map(weapon => {
+        return weapon.details();
+      })
     };
+  }
+  update() {
+    this.weapons.forEach(weapon => weapon.moveUp());
+    this.alienShip.moveDown();
+  }
+  playerCord() {
+    let {x, y} = this.player.details();
+    return {x, y};
+  }
+  fireWeapon() {
+    const {x, y} = this.playerCord();
+    this.weapons.push(new Component(x + 33, y, 70, 90));
+  }
+
+  shipMoveLeft() {
+    this.player.moveLeft();
+  }
+  shipMoveRight() {
+    this.player.moveRight();
   }
 }
