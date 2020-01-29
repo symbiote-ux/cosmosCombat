@@ -3,17 +3,19 @@
 const randNum = () => Math.ceil(Math.random() * 1400);
 
 class Game {
-  constructor(player, alienShip, weapon) {
+  constructor(player, alienShip, weapon, bullet) {
     this.player = player;
     this.alienShips = [alienShip];
     this.weapons = [weapon];
+    this.bullets = [bullet];
   }
   status() {
     this.update();
     return {
       player: this.player.details(),
       alienShips: this.alienStatus(),
-      weapons: this.weaponStatus()
+      weapons: this.weaponStatus(),
+      bullets: this.bulletStatus()
     };
   }
   alienStatus() {
@@ -26,21 +28,34 @@ class Game {
       return weapon.details();
     });
   }
+  bulletStatus() {
+    return this.bullets.map(bullet => {
+      return bullet.details();
+    });
+  }
   update() {
     this.weapons.forEach(weapon => weapon.moveUp());
     this.alienShips.forEach(alien => alien.moveDown());
+    this.bullets.forEach(bullet => bullet.shoot());
     this.eraseAlienAndWeapon();
   }
   playerCord() {
-    let {x, y} = this.player.details();
+    const {x, y} = this.player.details();
     return {x, y};
+  }
+  fireBullet() {
+    const aliens = this.alienStatus();
+    aliens.forEach(alien => {
+      const {x, y} = alien;
+      this.bullets.push(new Component(x + 30, y + 45, 40, 40));
+    });
   }
   fireWeapon() {
     const {x, y} = this.playerCord();
-    this.weapons.push(new Component(x + 33, y, 70, 90));
+    this.weapons.push(new Component(x + 33, y, 60, 80));
   }
   insertAlienShip() {
-    this.alienShips.push(new Component(randNum(), 0, 120, 120));
+    this.alienShips.push(new Component(randNum(), 0, 90, 90));
   }
   shipMoveLeft() {
     this.player.moveLeft();
@@ -62,7 +77,7 @@ class Game {
           this.alienShips.splice(index1, 1);
           this.weapons.splice(index2, 1);
         }
-        if (weapon.y === 1) this.weapons.splice(index2, 1);
+        if (weapon.y <= 1) this.weapons.splice(index2, 1);
       });
     });
   }

@@ -1,8 +1,17 @@
-warp the boundary 
-player should come from another side if it cross the margin
+--------#Done-------delete the weapon after crossing the margin
+--------#Done-------delete the weapon and alien on collision
+----#Done---give alien the ability to shoot
+----#Done-----warp the boundary 
+-----#Done---player should come from another side if it cross the margin
+-----#Done---make the cursor or display scrolling smooth
+
+
+add alien of different face
 score mechanism
-delete the weapon after crossing the margin
-delete the alien if cross the boundary
- delete the weapon and alien on collision
- add game over mechanism
- make the cursor or display scrolling smooth
+add life line mechanism
+add game over mechanism
+on collision with alien missile player should out
+if fifteen  alien enters the boundary game should over
+if alien ships touches the player ship game should be over 
+add server to the game
+add one more player to the game:multiplayer 

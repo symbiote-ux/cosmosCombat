@@ -11,13 +11,16 @@ const clearScreen = () => {
 };
 
 const drawGame = (status, ctx) => {
-  const ids = ['#missile', '#ship', '#alien'];
-  const {player, alienShips, weapons} = status;
+  const ids = ['#missile', '#ship', '.alien', '#bullet'];
+  const {player, alienShips, weapons, bullets} = status;
   clearScreen();
   weapons.forEach(weapon => {
     draw(weapon, ctx, ids[0]);
   });
   draw(player, ctx, ids[1]);
+  bullets.forEach(bullet => {
+    draw(bullet, ctx, ids[3]);
+  });
   alienShips.forEach(alien => {
     draw(alien, ctx, ids[2]);
   });
@@ -47,20 +50,21 @@ const main = () => {
   canvas.width = 1420;
   const ctx = canvas.getContext('2d');
   const player = new Component(80, 640, 130, 130);
-  const alien = new Component(700, 0, 120, 120);
-  const weapon = new Component(112, 645, 70, 90);
-  const game = new Game(player, alien, weapon);
+  const alien = new Component(700, 0, 90, 90);
+  const weapon = new Component(0, 0, 60, 80);
+  const bullet = new Component(730, 45, 40, 40);
+  const game = new Game(player, alien, weapon, bullet);
   attachEventListeners(game);
 
   setInterval(() => {
-    // if (game.isOver()) {
-    //   alert('Game over');
-    // }
     drawGame(game.status(), ctx);
-  }, 50);
+  }, 30);
   setInterval(() => {
     game.insertAlienShip();
-  }, 3000);
+  }, 2000);
+  setInterval(() => {
+    game.fireBullet();
+  }, 8000);
 };
 
 window.onload = main;
