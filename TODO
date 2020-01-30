@@ -4,9 +4,9 @@
 ----#Done-----warp the boundary 
 -----#Done---player should come from another side if it cross the margin
 -----#Done---make the cursor or display scrolling smooth
+----#Done-----add alien of different face
 
 
-add alien of different face
 score mechanism
 add life line mechanism
 add game over mechanism
@@ -15,3 +15,5 @@ if fifteen  alien enters the boundary game should over
 if alien ships touches the player ship game should be over 
 add server to the game
 add one more player to the game:multiplayer 
+on collision there should be an explosion
+

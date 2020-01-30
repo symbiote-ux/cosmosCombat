@@ -26,9 +26,6 @@ class Component {
   moveUp() {
     this.y -= 10;
   }
-  moveDown() {
-    this.y += 1;
-  }
   shoot() {
     this.y += 3;
   }

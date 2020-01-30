@@ -4,6 +4,11 @@ const draw = (component, ctx, id) => {
   ctx.drawImage(img, x, y, width, height);
 };
 
+const drawAlien = (alien, ctx) => {
+  const {x, y, width, height, img} = alien;
+  ctx.drawImage(img, x, y, width, height);
+};
+
 const clearScreen = () => {
   const canvas = document.querySelector('#screen');
   const ctx = canvas.getContext('2d');
@@ -22,7 +27,7 @@ const drawGame = (status, ctx) => {
     draw(bullet, ctx, ids[3]);
   });
   alienShips.forEach(alien => {
-    draw(alien, ctx, ids[2]);
+    drawAlien(alien, ctx);
   });
 };
 
@@ -48,9 +53,10 @@ const main = () => {
   const canvas = document.querySelector('#screen');
   canvas.height = 770;
   canvas.width = 1420;
+  const img = document.querySelector('.alien');
   const ctx = canvas.getContext('2d');
   const player = new Component(80, 640, 130, 130);
-  const alien = new Component(700, 0, 90, 90);
+  const alien = new Alien(700, 0, 90, 90, img);
   const weapon = new Component(0, 0, 60, 80);
   const bullet = new Component(730, 45, 40, 40);
   const game = new Game(player, alien, weapon, bullet);

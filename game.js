@@ -55,7 +55,9 @@ class Game {
     this.weapons.push(new Component(x + 33, y, 60, 80));
   }
   insertAlienShip() {
-    this.alienShips.push(new Component(randNum(), 0, 90, 90));
+    const images = document.querySelectorAll('.alien');
+    const img = images[Math.floor(Math.random() * images.length)];
+    this.alienShips.push(new Alien(randNum(), 0, 90, 90, img));
   }
   shipMoveLeft() {
     this.player.moveLeft();
@@ -65,7 +67,7 @@ class Game {
   }
   hasCollide(alien, weapon) {
     const {x: a, y: b, width: w, height: h} = alien.details();
-    const {x, y, width, height} = weapon.details();
+    const {x, y, width} = weapon.details();
     const isXinRange = isInRange(a, a + w, x) || isInRange(a, a + w, x + width);
     const isYinRange = y <= b + h;
     return isXinRange && isYinRange;
