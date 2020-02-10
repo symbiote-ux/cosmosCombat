@@ -24,4 +24,8 @@ body {
 #scoreBox {
   color: crimson;
   font-size: 40px;
+  z-index: 5;
+  position: absolute;
+  width: 200px;
+  height: 40px;
 }

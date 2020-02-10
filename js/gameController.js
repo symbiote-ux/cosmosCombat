@@ -78,7 +78,7 @@ const animateGame = function(game, ctx) {
 };
 
 const gameInit = function(img) {
-  const player = new Component(80, 640, 130, 130);
+  const player = new Component(80, 600, 130, 130);
   const alien = new Alien(700, 0, 90, 90, img);
   const weapon = new Component(-50, -50, 60, 80);
   const bullet = new Component(720, 45, 40, 40);
@@ -87,8 +87,8 @@ const gameInit = function(img) {
 
 const main = function() {
   const canvas = document.querySelector('#screen');
-  canvas.height = 770;
-  canvas.width = 1420;
+  canvas.height = 740;
+  canvas.width = 1580;
   const img = document.querySelector('.alien');
   const ctx = canvas.getContext('2d');
   const game = gameInit(img);
