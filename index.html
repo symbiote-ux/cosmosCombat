@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Cosmos Combat</title>
-    <link rel="stylesheet" href="styles.css " />
-    <script src="game.js"></script>
-    <script src="component.js"></script>
-    <script src="alien.js"></script>
-    <script src="gameController.js"></script>
+    <link rel="stylesheet" href="./css/styles.css " />
+    <script src="./lib/hasCollide.js"></script>
+    <script src="./js/score.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/component.js"></script>
+    <script src="./js/alien.js"></script>
+    <script src="./js/gameController.js"></script>
   </head>
   <body>
-    <div id="bag" style="display:none">
-      <img id="missile" src="./m3.png" alt="weapon" />
-      <img id="bullet" src="./rocket2.png" alt="bullet" />
-      <img id="ship" src="./Spaceship.png" alt="spaceShip" />
-      <img class="alien" src="./alien.png" alt="alien" />
-      <img class="alien" src="./alien4.png" alt="alien" />
-      <img class="alien" src="./alien6.png" alt="alien" />
+    <div style="display:none">
+      <img id="missile" src="./images/missile.png" alt="weapon" />
+      <img id="bullet" src="./images/rocket2.png" alt="bullet" />
+      <img id="ship" src="./images/Spaceship.png" alt="spaceShip" />
+      <img class="alien" src="./images/alien.png" alt="alien" />
+      <img class="alien" src="./images/alien4.png" alt="alien" />
+      <img class="alien" src="./images/alien6.png" alt="alien" />
+    </div>
+    <div id="msg" style="display:none">
+      <h1>Game Over</h1>
     </div>
     <canvas id="screen"> </canvas>
+    <div id="scoreBox"></div>
   </body>
 </html>

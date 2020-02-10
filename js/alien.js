@@ -1,5 +1,4 @@
 'use strict';
-
 class Alien {
   constructor(x, y, width, height, img) {
     this.x = x;

@@ -7,9 +7,9 @@
 ----#Done-----add alien of different face
 
 
+add game over mechanism
 score mechanism
 add life line mechanism
-add game over mechanism
 on collision with alien missile player should out
 if fifteen  alien enters the boundary game should over
 if alien ships touches the player ship game should be over 
@@ -17,3 +17,11 @@ add server to the game
 add one more player to the game:multiplayer 
 on collision there should be an explosion
 
+
+
+-------Refactoring-----------------
+* refactor main --- #extract interval out
+* refactor drawGame ---#refactor the use of forEach
+* refactor has collide function 
+* refactor hasHit function
+* refactor isGameOver function
