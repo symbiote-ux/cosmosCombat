@@ -68,6 +68,9 @@ class Game {
           this.weapons.splice(indexW, 1);
           this.score.count(1);
         }
+        if (weapon.y <= 5) {
+          this.weapons.splice(indexW, 1);
+        }
       });
     });
   }
