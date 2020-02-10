@@ -82,7 +82,7 @@ class Game {
           this.weapons.splice(indexW, 1);
         }
       });
-      if (bullet.y >= 600) {
+      if (bullet.y >= 670) {
         this.bullets.splice(indexB, 1);
       }
     });

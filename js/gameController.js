@@ -8,7 +8,7 @@ const stopGame = (drawInterval, alienInterval, bulletInterval) => {
 
 const drawScore = score => {
   const scoreBox = document.getElementById('scoreBox');
-  scoreBox.innerText = score;
+  scoreBox.innerText = `Score : ${score}`;
 };
 
 const draw = (component, ctx, id) => {
