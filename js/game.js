@@ -74,9 +74,6 @@ class Game {
       });
     });
   }
-  isOver() {
-    return this.bullets.some(bullet => hasCollide(this.player, bullet, 'down'));
-  }
   deleteBullet() {
     this.bullets.forEach((bullet, indexB) => {
       this.weapons.forEach((weapon, indexW) => {
@@ -89,5 +86,8 @@ class Game {
         this.bullets.splice(indexB, 1);
       }
     });
+  }
+  isOver() {
+    return this.bullets.some(bullet => hasCollide(this.player, bullet, 'down'));
   }
 }

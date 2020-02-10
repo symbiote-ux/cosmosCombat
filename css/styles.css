@@ -16,6 +16,7 @@ body {
 #screen {
   border: 1px solid black;
   background-color: black;
+  border-radius: 15px;
 }
 
 .alien {
