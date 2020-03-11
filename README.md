@@ -1,3 +1,3 @@
 # cosmosCombat
 
-click to play: [https://cosmos-combat.herokuapp.com/](https://cosmos-combat.herokuapp.com//)
+click to play: [https://cosmos-combat.herokuapp.com/](https://cosmos-combat.herokuapp.com/)
