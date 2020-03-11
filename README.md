@@ -1,3 +1,3 @@
 # cosmosCombat
 
-click to play: [https://symbiote-ux.github.io/cosmosCombat/](https://symbiote-ux.github.io/cosmosCombat/)
+click to play: [https://cosmos-combat.herokuapp.com/](https://cosmos-combat.herokuapp.com//)
